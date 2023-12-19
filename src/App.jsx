@@ -1,32 +1,6 @@
 import { useState } from "react"
 import { Search } from "./Search";
 
-// const targets = [
-//   {
-//     id: 'hesse',
-//     name: 'Hermann Hesse'
-//   },
-//   {
-//     id: 'nietzsche',
-//     name: 'Friedrich Nietzsche'
-//   },
-//   {
-//     id: 'kepler',
-//     name: 'Johannes Kepler'
-//   },
-//   {
-//     id: 'newton',
-//     name: 'Isaac Newton'
-//   },
-//   {
-//     id: 'gauss',
-//     name: 'Carl Friedrich Gauss'
-//   },
-//   {
-//     id: 'turing',
-//     name: 'Alan Turing'
-//   },
-// ]
 const targets = [
   { 'id': 'nietzsche',    'name': 'Friedrich Nietzsche' },
   { 'id': 'gauss',        'name': 'Carl Friedrich Gauss' },
@@ -48,7 +22,7 @@ const targets = [
   { 'id': 'tolstoi',      'name': 'León Tolstói' },
   { 'id': 'thoreau',      'name': 'Henry David Thoreau' },
   { 'id': 'orwell',       'name': 'George Orwell' },
-  { 'id': 'freud',        'name': 'Sigmund Freud' },
+  { 'id': 'arendt',        'name': 'Hannah Arendt' },
   { 'id': 'escohotado',   'name': 'Antonio Escohotado' },
   { 'id': 'foucault',     'name': 'Michael Foucault' },
   { 'id': 'curie',        'name': 'Marie Curie', },
@@ -56,7 +30,7 @@ const targets = [
 ]
 
 export const App = () => {
-  const [selectedImage, setselectedImage] = useState(targets[4]);
+  const [selectedImage, setselectedImage] = useState(targets[20]);
 
   const handleNextClick = () => {
     const currentIndex = targets.findIndex(target => target.id == selectedImage.id);

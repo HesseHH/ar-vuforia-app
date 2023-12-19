@@ -112,3 +112,7 @@
     opacity: 0.5;
     font-weight: bolder;
 }
+
+.sc {
+    scroll-behavior: auto;
+}

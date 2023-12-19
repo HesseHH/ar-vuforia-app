@@ -45,21 +45,27 @@ export const Search = ({ targets = [], setselectedImage }) => {
                 onBlur={() => setTimeout(() => {setIsFocused(false)}, 300)}
             />
             <div className="search"></div>
-            {search.length > 0 && isFocused && (
-                <div 
-                    className='absolute top-[75px] z-10 rounded-lg bg-slate-500 w-full'
-                    onClick={handleClickSelectTarget}
-                >
-                    {targetsFinded.map(x => (
-                        <div key={x.id} data-id-target={x.id} className='hover:bg-slate-400 w-full h-full cursor-pointer'>
-                            <div data-id-target={x.id} className='flex w-full h-full'>
-                                <img data-id-target={x.id} className='' width='35px' height='20px' src={`/${x.id}.jpg`} alt="" />
-                                <p data-id-target={x.id} className='p-3'>{x.name}</p>
+            <div>
+                {search.length > 0 && isFocused  && (
+                    <div 
+                        className='absolute top-[75px] z-10 rounded-lg bg-slate-500 w-full'
+                        style={{
+                            height: `${targetsFinded.length * 48 > 400 ? '400px' : ''}`,
+                            overflowX: `${targetsFinded.length * 48 > 400 ? 'auto' : ''}`
+                        }}
+                        onClick={handleClickSelectTarget}
+                    >
+                        {targetsFinded.map(x => (
+                            <div key={x.id} data-id-target={x.id} className='hover:bg-slate-400 w-full cursor-pointer'>
+                                <div data-id-target={x.id} className='flex w-full h-full'>
+                                    <img data-id-target={x.id} className='' width='35px' height='20px' src={`/${x.id}.jpg`} alt="" />
+                                    <p data-id-target={x.id} className='p-3'>{x.name}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            )}
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
